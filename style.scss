@@ -1,0 +1,299 @@
+@use 'colors';
+
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-center-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+@include flex-evenly {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+@mixin w-h-full {
+    width: 100%;
+    height: 100vh;
+}
+
+@mixin b-s-p {
+    background-size: cover;
+    background-position: center;
+}
+
+@mixin c-p {
+    cursor: pointer;
+}
+
+
+.section {
+    @include w-h-full;
+    background: linear-gradient(black 0% 100%), url(image.png);
+    @include b-s-p;
+    h1 {
+        margin-top: 350px;
+    }
+
+    #btn {
+        position: absolute;
+        top: 480px;
+        left: 580px;
+    }
+
+    .qator {
+        margin-top: 100px;
+        width: 100%;
+        @include flex-center;
+
+        .katak {
+            width: 150px;
+            height: 8vh;
+
+            h1 {
+                margin-top: 0px;
+                font-size: 12px;
+            }
+
+            p {
+                font-size: 8px;
+            }
+        }
+    }
+}
+
+// section2
+.section2 {
+    width: 100%;
+    height: 117vh;
+
+    .container {
+        p {
+            font-size: 30px;
+        }
+
+        .row {
+            position: relative;
+            width: 86%;
+            height: 50px;
+            left: 10%;
+            gap: 10px;
+
+            .col-md-2 {
+                width: 150px;
+                height: 50px;
+                @include flex-center;
+            }
+        }
+
+        .row2 {
+            position: relative;
+            width: 85% !important;
+            height: max-content;
+            left: 9%;
+            top: 50px;
+            gap: 60px;
+            @include flex-center;
+            flex-wrap: wrap;
+
+            .col-md-4 {
+                width: 275px;
+                height: 220px;
+                background-image: url(image2.png);
+                @include b-s-p;
+            }
+
+            .col-md-4:nth-child(2) {
+                background-image: url(image3.png);
+                @include b-s-p;
+            }
+
+            .col-md-4:nth-child(3) {
+                background-image: url(image4.png);
+                @include b-s-p;
+            }
+
+            .col-md-4:nth-child(4) {
+                background-image: url(image5.png);
+                @include b-s-p;
+            }
+
+            .col-md-4:nth-child(5) {
+                background-image: url(image6.png);
+                @include b-s-p;
+            }
+
+            .col-md-4:nth-child(6) {
+                background-image: url(image7.png);
+                @include b-s-p;
+            }
+        }
+    }
+}
+
+// section3
+.section3 {
+    width: 100%;
+    height: 55vh;
+    background-image: url(https://s3-alpha-sig.figma.com/img/949f/d424/0895b446d9cacf54560e67393c8417f7?Expires=1737331200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=bwmEdBgkz1CY-lvA3DakvK4lDc-Y4AzXUafIAzoiCJ9rC7kckxzySlg2aqg58o68ARz9H5Ava-OhsFlLdeQcLqsNeQe6fcnb9O8cdgfEToYN3ZX7voARgH1hb7bA~rt8gAdiOLSBsCri7tYHl4ZJZij96l~jha~47gQqLifoosERfFK9MLJlLT8Bm59SMyYscGA4EUQgQL31n35bWSeKNg~E3EB8SNljZWnjP1TdonSQu1lwMSd4Lx4skJSP6TXqqrJHOJmFW~~DvgpMc0ZU9TXe-74hXx52OrNyClwC0BrQ2iZEFCqmOPz1b6buE~zscX0FvKYEDl3QAJeJ-iqDmg__);
+
+    .hover {
+        width: 200px;
+        height: 50px;
+        @include flex-center;
+        margin-left: 560px;
+        margin-top: 50px;
+        @include c-p;
+    }
+}
+
+// section4
+.section4 {
+    @include w-h-full;
+
+    aside {
+        position: relative;
+        width: 70%;
+        height: 500px;
+        left: 15%;
+        top: 100px;
+
+        .row1 {
+            width: 100%;
+            left: 50px;
+            @include flex-center;
+            gap: 20px;
+
+            .col-md-4 {
+                width: 300px;
+                height: 320px;
+                background-image: url(image8.png);
+                @include b-s-p;
+                background-repeat: no-repeat;
+            }
+
+            .col-md-4:nth-child(2) {
+                background-image: url(image9.png);
+                @include b-s-p;
+            }
+
+            .col-md-4:nth-child(3) {
+                background-image: url(image10.png);
+                @include b-s-p;
+            }
+        }
+
+        .hover {
+            width: 250px;
+            height: 50px;
+            background-color: #333333;
+            @include flex-center;
+            margin-left: 350px;
+            margin-top: 30px;
+            @include c-p;
+        }
+    }
+}
+
+// section5
+.section5 {
+    @include w-h-full;
+
+    aside {
+        position: relative;
+        width: 70%;
+        height: 500px;
+        left: 15%;
+
+        .row {
+            position: absolute;
+            top: 130px;
+            width: 100%;
+            height: 500px;
+            left: 12px;
+
+            .col-md-6 {
+                background-image: url(image11.png);
+                @include b-s-p;
+                @include flex-center;
+            }
+
+            .col-md-3:nth-child(2) {
+                background-image: url(image12.png);
+                @include b-s-p;
+            }
+
+            .col-md-3:nth-child(3) {
+                background-image: url(image13.png);
+                @include b-s-p;
+            }
+
+            .divv {
+                background-image: url(image16.png);
+                @include b-s-p;
+            }
+
+            .col-md-3:nth-child(4) {
+                background-image: url(image14.png);
+                @include b-s-p;
+            }
+
+            .col-md-3:nth-child(5) {
+                background-image: url(image15.png);
+                @include b-s-p;
+            }
+        }
+    }
+}
+
+.ff {
+    width: 100%;
+    height: 60vh;
+    background-size: 15%;
+    background-image: url(https://s3-alpha-sig.figma.com/img/949f/d424/0895b446d9cacf54560e67393c8417f7?Expires=1737331200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=bwmEdBgkz1CY-lvA3DakvK4lDc-Y4AzXUafIAzoiCJ9rC7kckxzySlg2aqg58o68ARz9H5Ava-OhsFlLdeQcLqsNeQe6fcnb9O8cdgfEToYN3ZX7voARgH1hb7bA~rt8gAdiOLSBsCri7tYHl4ZJZij96l~jha~47gQqLifoosERfFK9MLJlLT8Bm59SMyYscGA4EUQgQL31n35bWSeKNg~E3EB8SNljZWnjP1TdonSQu1lwMSd4Lx4skJSP6TXqqrJHOJmFW~~DvgpMc0ZU9TXe-74hXx52OrNyClwC0BrQ2iZEFCqmOPz1b6buE~zscX0FvKYEDl3QAJeJ-iqDmg__);
+
+    .bb {
+        width: 390px;
+        height: 120px;
+        background-color: white;
+        @include flex-evenly;
+        margin-left: 700px !important;
+        margin-top: -110px;
+
+        input {
+            width: 200px;
+            height: 50px;
+        }
+
+        button {
+            width: 145px;
+            height: 50px;
+            background-color: black;
+            color: white;
+            border: 0;
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .section {
+        background-size: cover;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between !important;
+    }
+
+    .navbar-logo {
+        display: block !important;
+    }
+}
